@@ -19,6 +19,11 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
+
+  gem 'rspec', '~> 3.13'
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.2'
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
+  gem 'shoulda-matchers', '~> 6.2'
 end
 
 group :development do
