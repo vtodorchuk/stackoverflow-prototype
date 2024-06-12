@@ -1,0 +1,17 @@
+<%= link_to 'Back', questions_path, class: "text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 mb-10 flex" %>
+
+<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= @question.title %></h5>
+<p class="font-normal text-gray-700 dark:text-gray-400"><%= @question.body %></p>
+
+<hr class="my-12 h-0.5 border-t-0 bg-neutral-100"/>
+
+<%= render 'answers/form', question: @question %>
+
+<% @question.answers.each do |answer| %>
+  <% next unless answer&.body %>
+  <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow light:bg-gray-800 light:border-gray-700 mb-5">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= answer.id %></h5>
+    <p class="font-normal text-gray-700 text-gray-400"><%= answer.body %></p>
+  </div>
+<% end %>
+

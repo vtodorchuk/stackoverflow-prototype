@@ -1,0 +1,8 @@
+<%= form_with model: question.answers.new, url: question_answers_path(question_id: question), method: :post do |form| %>
+  <div class="relative z-0 w-full mb-5 group">
+    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 light:text-white">Answer</label>
+    <%= form.text_area :body, size: "70x5", class:"block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 light:bg-gray-700 light:border-gray-600 light:placeholder-gray-400 light:text-white light:focus:ring-blue-500 light:focus:border-blue-500"  %>
+  </div>
+
+  <%= form.submit "Answer", class: "text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 light:bg-purple-600 light:hover:bg-purple-700 light:focus:ring-purple-900 mb-10 flex" %>
+<% end %>

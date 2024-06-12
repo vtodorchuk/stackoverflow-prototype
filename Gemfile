@@ -16,9 +16,18 @@ gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
+gem 'tailwindcss-rails', '~> 2.6'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
+
+  gem 'ffaker', '~> 2.23'
+  gem 'rspec', '~> 3.13'
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.2'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  gem 'factory_bot', '~> 6.4', '>= 6.4.6'
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
+  gem 'shoulda-matchers', '~> 6.2'
 end
 
 group :development do
