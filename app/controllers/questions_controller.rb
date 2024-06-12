@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :load_question, only: %w[show edit update destroy]
+  before_action :authenticate_user!, expet: %w[index show]
 
   def index
     @questions = Question.order(created_at: :desc)
@@ -42,7 +43,7 @@ class QuestionsController < ApplicationController
   private
 
   def load_question
-    @question = Question.find(params[:id])
+    @question = Question.find_by(id: params[:id])
   end
 
   def questions_params

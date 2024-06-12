@@ -17,6 +17,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 gem 'tailwindcss-rails', '~> 2.6'
+gem 'devise', '~> 4.9', '>= 4.9.4'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
@@ -27,7 +28,12 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'factory_bot', '~> 6.4', '>= 6.4.6'
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
+end
+
+group :test do
   gem 'shoulda-matchers', '~> 6.2'
+  gem 'capybara', '~> 3.40'
+  gem 'webdrivers'
 end
 
 group :development do

@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   def create
-    @answer = question.answers.new(questions_params)
+    @answer = question.answers.new(answers_params)
 
     if @answer.save
       redirect_to question
@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if answer.update(answer_params)
+    if answer.update(answers_params)
       redirect_to question
     else
       redirect_to question, alert: answer.errors.full_messages
@@ -31,7 +31,7 @@ class AnswersController < ApplicationController
     @question ||= Question.find_by(id: params[:question_id])
   end
 
-  def questions_params
+  def answers_params
     params.require(:answer).permit(:body)
   end
 
